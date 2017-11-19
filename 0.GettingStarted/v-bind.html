@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <link rel="stylesheet" href="styles/demo.css" />
+    </head>
+    <body>
+        <div id="app">
+            <ul class="pagination">
+            <!--从1开始，和浏览器有关-->
+                <li v-for="n in pageCount">
+                <!--javascript:void(0)是什么都不做-->
+                    <a href="javascript:void(alert('hello'))" v-bind:class="activeNumber == n+1 ? 'active' : ''">{{ n }}</a>
+                </li>
+            </ul>
+        </div>
+    </body>
+    <script src="js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                activeNumber: 2,
+                pageCount: 10
+            }
+        })
+    </script>
+</html>
